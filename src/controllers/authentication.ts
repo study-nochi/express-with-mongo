@@ -1,6 +1,7 @@
 import { authentication, random } from "helpers";
-import { createUser, getUser, getUserByEmail } from "../db/users";
+import { createUser, getUserByEmail } from "../db/users";
 import { Request, Response } from "express";
+import { NOCHI_AUTH } from "constants/cookie";
 
 export const login = async (req: Request, res: Response) => {
   try {
@@ -32,7 +33,7 @@ export const login = async (req: Request, res: Response) => {
 
     await user.save();
 
-    res.cookie("NOCHI-AUTH", user.authentication.sessionToken, {
+    res.cookie(NOCHI_AUTH, user.authentication.sessionToken, {
       domain: "localhost",
       path: "/",
     });
