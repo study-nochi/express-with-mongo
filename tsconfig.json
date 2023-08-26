@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext", // 모듈 설정
+    "moduleResolution": "Node", // 모듈 확인 노드 설정
+    "baseUrl": "src", // 기본 URL
+    "outDir": "dist",
+    "sourceMap": true, // 소스 맵 활성화
+    "noImplicitAny": true
+  },
+  "include": ["src/**/*"] // src 의 모든 폴더, 모든 파일 포함
+}
